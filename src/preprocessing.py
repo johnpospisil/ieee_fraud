@@ -179,11 +179,13 @@ class FraudPreprocessor:
         if self.categorical_features:
             if categorical_strategy == 'mode':
                 for col in self.categorical_features:
-                    if df[col].isnull().any():
+                    if col in df.columns and df[col].isnull().any():
                         mode_val = df[col].mode()[0] if len(df[col].mode()) > 0 else 'missing'
-                        df[col] = df[col].fillna(mode_val)
+                        df.loc[:, col] = df[col].fillna(mode_val)
             elif categorical_strategy == 'missing':
-                df[self.categorical_features] = df[self.categorical_features].fillna('missing')
+                for col in self.categorical_features:
+                    if col in df.columns and df[col].isnull().any():
+                        df.loc[:, col] = df[col].fillna('missing')
         
         remaining_nulls = df.isnull().sum().sum()
         print(f"✓ Missing values handled. Remaining nulls: {remaining_nulls}\n")
