@@ -13,8 +13,20 @@ from .cross_validation import (
     quick_cv_comparison,
     analyze_cv_consistency
 )
+from .test_predictions import (
+    TestPredictor,
+    EnsembleTestPredictor,
+    create_submission_file,
+    validate_submission,
+    analyze_predictions,
+    save_prediction_metadata,
+    rank_average_predictions,
+    blend_predictions
+)
 
 __all__ = ['LGBMBaseline', 'train_baseline_model', 'LGBMTuner', 'quick_tune', 'staged_tuning',
            'FeatureSelector', 'quick_feature_selection', 'ModelEnsemble', 'simple_blend', 'rank_average',
            'RobustCrossValidator', 'TimeSeriesCV', 'EnsembleCrossValidator', 'quick_cv_comparison',
-           'analyze_cv_consistency']
+           'analyze_cv_consistency', 'TestPredictor', 'EnsembleTestPredictor', 'create_submission_file',
+           'validate_submission', 'analyze_predictions', 'save_prediction_metadata',
+           'rank_average_predictions', 'blend_predictions']

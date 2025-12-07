@@ -1,0 +1,36 @@
+{
+    "prediction_stats": {
+        "count": 506691,
+        "mean": 0.028354902881685642,
+        "std": 0.1100517382767823,
+        "min": 1.957575747796165e-05,
+        "max": 0.9993821337035687
+    },
+    "models": {
+        "cv_strategy": "time_series",
+        "n_folds": 5,
+        "oof_auc": 0.5153390410883203,
+        "parameters": {
+            "objective": "binary",
+            "metric": "auc",
+            "boosting_type": "gbdt",
+            "verbosity": -1,
+            "random_state": 42,
+            "n_jobs": -1,
+            "subsample_freq": 1,
+            "learning_rate": 0.03753356957837798,
+            "num_leaves": 364,
+            "max_depth": 9,
+            "min_child_samples": 40,
+            "subsample": 0.9869857864517387,
+            "colsample_bytree": 0.631848811659453,
+            "reg_alpha": 1.2381174380752886,
+            "reg_lambda": 0.009733967146010769
+        },
+        "features": {
+            "count": 137,
+            "selected_from_m12": true
+        }
+    },
+    "timestamp": "2025-12-07T03:27:09.323635"
+}
